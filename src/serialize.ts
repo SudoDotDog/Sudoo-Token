@@ -29,3 +29,17 @@ export const deserializeString = (before: string): string => {
 
     return content;
 };
+
+export const serializeObject = (before: any): string => {
+
+    const stringified: string = JSON.stringify(before);
+
+    return serializeString(stringified);
+};
+
+export const deserializeObject = <T extends any = unknown>(before: string): T => {
+
+    const deserialized: string = deserializeString(before);
+
+    return JSON.parse(deserialized);
+};
