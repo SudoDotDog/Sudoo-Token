@@ -1,6 +1,6 @@
 {
 	"name": "@sudoo/token",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": ":sweat_drops: Token generator and signature validator",
 	"repository": {
 		"type": "git",
@@ -15,7 +15,6 @@
 		"url": "https://github.com/SudoDotDog/Sudoo-Token/issues"
 	},
 	"homepage": "https://github.com/SudoDotDog/Sudoo-Token#readme",
-	"dependencies": {},
 	"devDependencies": {
 		"@sudoo/io": "^1.8.0",
 		"@sudoo/triforce": "^2.8.3"
