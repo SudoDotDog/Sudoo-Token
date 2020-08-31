@@ -7,7 +7,7 @@
 import { generateKeyPairSync, KeyPairSyncResult } from 'crypto';
 import { KeyPair } from './declare';
 
-export const generateKey = (): KeyPair => {
+export const generateKeyPair = (): KeyPair => {
 
     const result: KeyPairSyncResult<string, string> = generateKeyPairSync(
         'rsa',
