@@ -1,16 +1,11 @@
 /**
  * @author WMXPY
  * @namespace Token
- * @description Crypto
+ * @description Generate
  */
 
 import { generateKeyPairSync } from 'crypto';
-
-export type KeyPair = {
-
-    readonly public: string;
-    readonly private: string;
-};
+import { KeyPair } from './declare';
 
 export const generateKey = (): KeyPair => {
 
