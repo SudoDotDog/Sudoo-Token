@@ -7,8 +7,7 @@
 
 import { expect } from 'chai';
 import * as Chance from 'chance';
-import { generateKeyPair } from '../../src';
-import { KeyPair } from '../../src/declare';
+import { generateKeyPair, KeyPair } from '../../src';
 
 describe('Given [Generate] help methods', (): void => {
 

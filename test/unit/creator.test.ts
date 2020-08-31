@@ -7,8 +7,7 @@
 
 import { expect } from 'chai';
 import * as Chance from 'chance';
-import { generateKeyPair, SignatureCreator } from '../../src';
-import { KeyPair } from '../../src/declare';
+import { generateKeyPair, KeyPair, SignatureCreator } from '../../src';
 
 describe('Given {SignatureCreator} class', (): void => {
 
