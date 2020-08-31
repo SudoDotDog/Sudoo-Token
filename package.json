@@ -1,0 +1,39 @@
+{
+	"name": "@sudoo/token",
+	"version": "1.0.0",
+	"description": ":sweat_drops: Token generator and signature validator",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SudoDotDog/Sudoo-Token.git"
+	},
+	"keywords": [
+		"Token"
+	],
+	"author": "WMXPY",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/SudoDotDog/Sudoo-Token/issues"
+	},
+	"homepage": "https://github.com/SudoDotDog/Sudoo-Token#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"@sudoo/io": "^1.8.0",
+		"@sudoo/triforce": "^2.8.3"
+	},
+	"nyc": {
+		"extension": [
+			".ts"
+		],
+		"include": [
+			"script/**/*.ts",
+			"src/**/*.ts"
+		],
+		"instrument": true,
+		"reporter": [
+			"json",
+			"text-summary"
+		],
+		"report-dir": "coverage",
+		"sourceMap": true
+	}
+}
