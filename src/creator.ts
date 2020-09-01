@@ -5,12 +5,14 @@
  */
 
 import { createSign, Signer } from 'crypto';
+import { attemptConvertKeyToMultiLine } from './generate';
 
 export class SignatureCreator {
 
     public static create(privateKey: string): SignatureCreator {
 
-        return new SignatureCreator(privateKey);
+        const ensuredPrivateKey: string = attemptConvertKeyToMultiLine(privateKey);
+        return new SignatureCreator(ensuredPrivateKey);
     }
 
     private readonly _privateKey: string;

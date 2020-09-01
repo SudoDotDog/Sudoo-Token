@@ -5,12 +5,14 @@
  */
 
 import { createVerify, Verify } from 'crypto';
+import { attemptConvertKeyToMultiLine } from './generate';
 
 export class SignatureVerifier {
 
     public static create(publicKey: string): SignatureVerifier {
 
-        return new SignatureVerifier(publicKey);
+        const ensuredPublicKey: string = attemptConvertKeyToMultiLine(publicKey);
+        return new SignatureVerifier(ensuredPublicKey);
     }
 
     private readonly _publicKey: string;
