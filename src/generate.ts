@@ -17,19 +17,19 @@ export const convertKeyToMultiLine = (key: string): string => {
     return key.replace(/\|\|/g, '\n');
 };
 
-export const convertKeyPairToSingleLine = (pair: KeyPair): KeyPair => {
+export const convertKeyPairToSingleLine = (keyPair: KeyPair): KeyPair => {
 
     return {
-        public: convertKeyToSingleLine(pair.public),
-        private: convertKeyToSingleLine(pair.private),
+        public: convertKeyToSingleLine(keyPair.public),
+        private: convertKeyToSingleLine(keyPair.private),
     };
 };
 
-export const convertKeyPairToMultiLine = (pair: KeyPair): KeyPair => {
+export const convertKeyPairToMultiLine = (keyPair: KeyPair): KeyPair => {
 
     return {
-        public: convertKeyToMultiLine(pair.public),
-        private: convertKeyToMultiLine(pair.private),
+        public: convertKeyToMultiLine(keyPair.public),
+        private: convertKeyToMultiLine(keyPair.private),
     };
 };
 

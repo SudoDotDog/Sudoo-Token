@@ -26,6 +26,9 @@ describe('Given [Generate] help methods', (): void => {
 
         const keyPair: KeyPair = generateKeyPair();
 
+        expect(keyPair.public).to.be.not.include('||');
+        expect(keyPair.private).to.be.not.include('||');
+
         expect(keyPair.public).to.be.include('\n');
         expect(keyPair.private).to.be.include('\n');
     });
