@@ -18,7 +18,7 @@ describe('Given {SignatureCreator} class', (): void => {
 
         const keyPair: KeyPair = generateKeyPair();
 
-        const creator: SignatureCreator = SignatureCreator.create(keyPair.private);
+        const creator: SignatureCreator = SignatureCreator.instantiate(keyPair.private);
 
         expect(creator).to.be.instanceOf(SignatureCreator);
     });
