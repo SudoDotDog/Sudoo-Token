@@ -7,7 +7,7 @@
 
 import { expect } from 'chai';
 import * as Chance from 'chance';
-import { generateKeyPair, KeyPair } from '../../src';
+import { generateKeyPair, KeyPair, generateSingleLineKeyPair } from '../../src';
 
 describe('Given [Generate] help methods', (): void => {
 
@@ -20,5 +20,24 @@ describe('Given [Generate] help methods', (): void => {
 
         expect(keyPair.public).to.be.include('END PUBLIC KEY');
         expect(keyPair.private).to.be.include('END PRIVATE KEY');
+    });
+
+    it('should be able to contain enter', (): void => {
+
+        const keyPair: KeyPair = generateKeyPair();
+
+        expect(keyPair.public).to.be.include('\n');
+        expect(keyPair.private).to.be.include('\n');
+    });
+
+    it('should be able to generate single line key pair', (): void => {
+
+        const keyPair: KeyPair = generateSingleLineKeyPair();
+
+        expect(keyPair.public).to.be.not.include('\n');
+        expect(keyPair.private).to.be.not.include('\n');
+
+        expect(keyPair.public).to.be.include('||');
+        expect(keyPair.private).to.be.include('||');
     });
 });
