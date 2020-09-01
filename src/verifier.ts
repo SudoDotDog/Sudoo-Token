@@ -9,7 +9,7 @@ import { attemptConvertKeyToMultiLine } from './generate';
 
 export class SignatureVerifier {
 
-    public static create(publicKey: string): SignatureVerifier {
+    public static instantiate(publicKey: string): SignatureVerifier {
 
         const ensuredPublicKey: string = attemptConvertKeyToMultiLine(publicKey);
         return new SignatureVerifier(ensuredPublicKey);

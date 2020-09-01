@@ -9,7 +9,7 @@ import { attemptConvertKeyToMultiLine } from './generate';
 
 export class SignatureCreator {
 
-    public static create(privateKey: string): SignatureCreator {
+    public static instantiate(privateKey: string): SignatureCreator {
 
         const ensuredPrivateKey: string = attemptConvertKeyToMultiLine(privateKey);
         return new SignatureCreator(ensuredPrivateKey);
