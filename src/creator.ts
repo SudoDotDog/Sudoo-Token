@@ -28,12 +28,6 @@ export class SignatureCreator {
         signer.update(content);
         const signature: string = signer.sign(this._privateKey, 'base64').replace(/=/g, '');
 
-        return signature;
-    }
-
-    public signWebFriendly(content: string): string {
-
-        const signature: string = this.sign(content);
         return signature.replace(/\+/g, '-').replace(/\//g, '_');
     }
 }
