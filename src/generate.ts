@@ -15,6 +15,14 @@ export const convertKeyPairToSingleLine = (pair: KeyPair): KeyPair => {
     };
 };
 
+export const convertKeyPairToMultiLine = (pair: KeyPair): KeyPair => {
+
+    return {
+        public: pair.public.replace(/\|\|/g, '\n'),
+        private: pair.private.replace(/\|\|/g, '\n'),
+    };
+};
+
 export const generateKeyPair = (): KeyPair => {
 
     const result: KeyPairSyncResult<string, string> = generateKeyPairSync(
@@ -37,4 +45,10 @@ export const generateKeyPair = (): KeyPair => {
         public: result.publicKey,
         private: result.privateKey,
     };
+};
+
+export const generateSingleLineKeyPair = (): KeyPair => {
+
+    const keyPair: KeyPair = generateKeyPair();
+    return convertKeyPairToSingleLine(keyPair);
 };
