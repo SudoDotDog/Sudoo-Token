@@ -4,6 +4,8 @@
  * @description Saltilizer
  */
 
+import { md5String } from "./serialize";
+
 export class Saltilizer {
 
     public static create(salt: string): Saltilizer {
@@ -20,7 +22,7 @@ export class Saltilizer {
 
         this._salt = salt;
 
-        this._appendStart = false;
+        this._appendStart = true;
         this._appendEnd = true;
     }
 
@@ -48,14 +50,27 @@ export class Saltilizer {
         return this;
     }
 
-    public encrypt(content: string) {
+    public encrypt(content: string): string {
 
-        const combinedContent: string = content + this._salt;
+        const combined: string = this.combine(content);
+        const encrypted: string = md5String(combined);
+
+        return encrypted;
     }
 
-    public combine(content: string) {
+    public verify(content: string, encrypted: string): boolean {
 
+        const correctEncrypted: string = this.encrypt(content);
 
+        return correctEncrypted === encrypted;
+    }
+
+    public combine(content: string): string {
+
+        const startContent: string = this.getStartContent();
+        const endContent: string = this.getEndContent();
+
+        return `${startContent}${content}${endContent}`;
     }
 
     private getStartContent(): string {
