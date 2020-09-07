@@ -22,4 +22,39 @@ describe('Given {Saltilizer} class', (): void => {
 
         expect(saltilizer).to.be.instanceOf(Saltilizer);
     });
+
+    it('should be able to combine start and end', (): void => {
+
+        const salt: string = chance.string();
+        const value: string = chance.string();
+
+        const saltilizer: Saltilizer = Saltilizer.create(salt);
+        const combined: string = saltilizer.combine(value);
+
+        expect(combined).to.be.equal(`${salt}${value}${salt}`);
+    });
+
+    it('should be able to combine only start', (): void => {
+
+        const salt: string = chance.string();
+        const value: string = chance.string();
+
+        const saltilizer: Saltilizer = Saltilizer.create(salt);
+        saltilizer.disableAppendEnd();
+        const combined: string = saltilizer.combine(value);
+
+        expect(combined).to.be.equal(`${salt}${value}`);
+    });
+
+    it('should be able to combine only end', (): void => {
+
+        const salt: string = chance.string();
+        const value: string = chance.string();
+
+        const saltilizer: Saltilizer = Saltilizer.create(salt);
+        saltilizer.disableAppendStart();
+        const combined: string = saltilizer.combine(value);
+
+        expect(combined).to.be.equal(`${value}${salt}`);
+    });
 });
