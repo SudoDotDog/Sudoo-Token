@@ -25,3 +25,14 @@ const creator: SignatureCreator = SignatureCreator.instantiate(keyPair.private);
 
 const token: string = creator.sign("Hello World");
 ```
+
+## Verify Token
+
+```ts
+import { KeyPair, SignatureVerifier } from "@sudoo/token";
+// Also get your generated key pair
+
+const verifier: SignatureVerifier = SignatureVerifier.instantiate(keyPair.public);
+
+const result: string = verifier.verify("Hello World", "<Generated Token>");
+```
