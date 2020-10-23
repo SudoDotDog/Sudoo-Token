@@ -5,9 +5,9 @@
  * @package Unit Test
  */
 
-import { expect } from 'chai';
-import * as Chance from 'chance';
-import { generateKeyPair, KeyPair, generateSingleLineKeyPair } from '../../src';
+import { expect } from "chai";
+import * as Chance from "chance";
+import { generateKeyPair, KeyPair, generateSingleLineKeyPair } from "../../src";
 
 describe('Given [Generate] help methods', (): void => {
 

@@ -5,9 +5,9 @@
  * @package Unit Test
  */
 
-import { expect } from 'chai';
-import * as Chance from 'chance';
-import { generateKeyPair, KeyPair, SignatureCreator } from '../../src';
+import { expect } from "chai";
+import * as Chance from "chance";
+import { generateKeyPair, KeyPair, SignatureCreator } from "../../src";
 
 describe('Given {SignatureCreator} class', (): void => {
 

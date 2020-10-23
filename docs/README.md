@@ -14,3 +14,14 @@ yarn add @sudoo/token
 # Or
 npm install @sudoo/token --save
 ```
+
+## Create Token
+
+```ts
+import { generateKeyPair, KeyPair, SignatureCreator } from "@sudoo/token";
+
+const keyPair: KeyPair = generateKeyPair();
+const creator: SignatureCreator = SignatureCreator.instantiate(keyPair.private);
+
+const token: string = creator.sign("Hello World");
+```
