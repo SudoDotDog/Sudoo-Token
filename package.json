@@ -1,7 +1,7 @@
 {
 	"name": "@sudoo/token",
 	"version": "1.6.0",
-	"description": ":sweat_drops: Token generator and signature validator",
+	"description": "Token generator and signature validator",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/SudoDotDog/Sudoo-Token.git"
