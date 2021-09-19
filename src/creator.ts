@@ -4,7 +4,7 @@
  * @description Creator
  */
 
-import { createSign, Signer } from 'crypto';
+import { createSign, Sign } from 'crypto';
 import { attemptConvertKeyToMultiLine } from './generate';
 
 export class SignatureCreator {
@@ -24,7 +24,7 @@ export class SignatureCreator {
 
     public sign(content: string): string {
 
-        const signer: Signer = createSign('RSA-SHA256');
+        const signer: Sign = createSign('RSA-SHA256');
         signer.update(content);
         const signature: string = signer.sign(this._privateKey, 'base64').replace(/=/g, '');
 
