@@ -1,6 +1,6 @@
 {
 	"name": "@sudoo/token",
-	"version": "1.6.0",
+	"version": "1.6.1",
 	"description": "Token generator and signature validator",
 	"repository": {
 		"type": "git",
