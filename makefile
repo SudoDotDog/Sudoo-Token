@@ -10,7 +10,6 @@ eslint := node_modules/.bin/eslint
 
 # Build functions
 build_utils := node_modules/.bin/build-utils
-license_package := node_modules/.bin/license-package
 
 main: dev
 
@@ -46,28 +45,24 @@ lint-fix:
 
 install:
 	@echo "[INFO] Installing Development Dependencies"
-	@yarn install --production=false
+	@pnpm install
 
 install-prod:
 	@echo "[INFO] Installing Production Dependencies"
-	@yarn install --production=true
+	@pnpm install
 
 outdated: install
 	@echo "[INFO] Checking Outdated Dependencies"
-	@yarn outdated
-
-license: clean
-	@echo "[INFO] Sign files"
-	@NODE_ENV=development $(license_package) license app
+	@pnpm outdated
 
 clean:
 	@echo "[INFO] Cleaning release files"
-	@NODE_ENV=development $(build_utils) clean-path app
+	@NODE_ENV=development $(build_utils) clean-path dist
 
-publish: install tests lint license build
+publish: install tests lint clean build
 	@echo "[INFO] Publishing package"
-	@cd app && npm publish --access=public
+	@pnpm publish --access=public --no-git-checks
 
-publish-dry-run: install tests lint license build
-	@echo "[INFO] Publishing package"
-	@cd app && npm publish --access=public --dry-run
+publish-dry-run: install tests lint clean build
+	@echo "[INFO] Publishing package (dry-run)"
+	@pnpm publish --access=public --no-git-checks --dry-run

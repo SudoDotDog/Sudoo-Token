@@ -6,7 +6,9 @@
         "downlevelIteration": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "outDir": "../app",
+        "outDir": "../dist",
+        "sourceMap": false,
+        "declarationMap": false,
         "lib": [
             "ES5",
             "ES2015",
